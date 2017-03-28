@@ -1,0 +1,21 @@
+%h1 bill splitter
+
+
+= form_tag root_post_path, :method => :post do
+  %div
+  %label amount
+  = text_field_tag "amount"
+  %div
+  %label tax
+  = text_field_tag "tax"
+  %div
+  %label tip
+  = text_field_tag "tip"
+  %div
+  %label people
+  = text_field_tag "people"
+  %div
+  = submit_tag "submit"
+
+- if params[:total].present?
+  Every person must pay #{params[:total]}
